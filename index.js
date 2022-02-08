@@ -9,6 +9,8 @@ import { createSpinner } from 'nanospinner';
 
 let playerName;
 
+const sleep = (ms=2000) => new Promise((r) => setTimeout(r, ms));
+
 async function welcome() {
     const title = chalkAnimation.rainbow("Welcome to the 'Do you want to become a millionaire' game!");
     await sleep();
