@@ -45,6 +45,14 @@ async function handleAnswer(isCorrect) {
         process.exit(1);
     }
 }
+
+async function winner() {
+    console.clear();
+    const message = `Congrats ${playerName}! \n $ 1 , 0 0 0 , 0 0 0`;
+    figlet(message, (err, data) => {
+        console.log(gradient.pastel.multiline(data));
+    })
+}
         choices: [
             'Peacock',
             'Markhor', //correct
