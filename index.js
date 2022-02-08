@@ -6,6 +6,17 @@ import inquirer from 'inquirer';
 import chalkAnimation from 'chalk-animation';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
+async function welcome() {
+    const title = chalkAnimation.rainbow("Welcome to the 'Do you want to become a millionaire' game!");
+    await sleep();
+
+    console.log(`
+    ${chalk.bgBlue('HOW TO PLAY')}
+    You will get a serious of questions
+    If you choose the wrong option, you will be ${chalk.bgRed('ELIMINATED')}.
+    So you better choose the right options!
+    `);
+}
         choices: [
             'Peacock',
             'Markhor', //correct
