@@ -6,6 +6,9 @@ import inquirer from 'inquirer';
 import chalkAnimation from 'chalk-animation';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
+
+let playerName;
+
 async function welcome() {
     const title = chalkAnimation.rainbow("Welcome to the 'Do you want to become a millionaire' game!");
     await sleep();
@@ -16,6 +19,18 @@ async function welcome() {
     If you choose the wrong option, you will be ${chalk.bgRed('ELIMINATED')}.
     So you better choose the right options!
     `);
+}
+
+async function askName() {
+    const answer = await inquirer.prompt({
+        name: 'player_name',
+        type: 'input',
+        message: 'What is your name?',
+        default() { 
+            return 'Player';
+        },
+    }); 
+    playerName = answer.player_name;
 }
         choices: [
             'Peacock',
