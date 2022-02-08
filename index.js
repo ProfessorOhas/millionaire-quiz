@@ -34,6 +34,17 @@ async function askName() {
     }); 
     playerName = answer.player_name;
 }
+
+async function handleAnswer(isCorrect) {
+    const spinner = createSpinner("Checking your answer...").start();
+    await sleep();
+    if (isCorrect) {
+        spinner.success({ text: `Nice job ${playerName}! Continue to the next question!`});
+    } else {
+        spinner.error({ text: `Sorry ${playerName}, you are eliminated!`});
+        process.exit(1);
+    }
+}
         choices: [
             'Peacock',
             'Markhor', //correct
