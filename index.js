@@ -53,6 +53,54 @@ async function winner() {
         console.log(gradient.pastel.multiline(data));
     })
 }
+
+async function president_question() {
+    const answer = await inquirer.prompt({
+        name: 'president_question',
+        type: 'list',
+        message: 'Who was elected President of the United States in 2017?',
+        choices: [
+            'Donald Trump', //corect
+            'Barack Obama',
+            'George W. Bush',
+        ],
+    });
+    return handleAnswer(answer.president_question == 'Donald Trump');
+}
+
+async function music_question() {
+    const answer = await inquirer.prompt({
+        name: 'music_question',
+        type: 'list',
+        message: 'When did Jonas Brothers make their comeback to the music world?',
+        choices: [
+            '2015',
+            '2011',
+            '2019', //corect
+        ],
+    });
+    return handleAnswer(answer.music_question == '2019');
+}
+
+async function language_question() {
+    const answer = await inquirer.prompt({
+        name: 'language_question',
+        type: 'list',
+        message: 'What is the national language of Canada?',
+        choices: [
+            'English',
+            'Dutch', //correct
+            'French',
+        ],
+    });
+    return handleAnswer(answer.language_question == 'Dutch');
+}
+
+async function animal_question() {
+    const answer = await inquirer.prompt({
+        name: 'animal_question',
+        type: 'list',
+        message: 'WWhat is the national animal of Pakistan?',
         choices: [
             'Peacock',
             'Markhor', //correct
